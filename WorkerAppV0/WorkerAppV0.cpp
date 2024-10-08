@@ -9,6 +9,8 @@ int main()
     CWorker list[3];
     string name;
     int workNo;
+    char response;
+    double increase;
 
     //prompt the user to enter worker name
     //and worker number
@@ -77,5 +79,44 @@ int main()
 
     }
 
+    //check to see you what to increase hrs worked for a worker
 
-}//end main
+    cout << "Worker Details: " << endl;
+    cout << "Enter worker number: ";
+    cin >> workNo;
+
+    for (int i = 0; i < 3; i++)
+    {
+        if (list[i].HasWorkNum(workNo) == true)
+        {
+            //object found so output matching data
+            cout << "Worker Name: "
+                << list[i].GetName() << endl;
+            cout << "Worker Number: "
+                << list[i].GetWorkNum() << endl;
+            cout << "Hrly Rate: "
+                << list[i].GetHourlyRate() << endl;
+            cout << "Hrs Worked: "
+                << list[i].GetHoursWorked() << endl;
+
+            cout << "Do you wish to offer the worker a precentage increase in pay ? (Y/N)";
+            cin >> response;
+
+            if (response == 'Y' || response == 'y')
+            {
+                cout << "Enter the percentage increase: ";
+                cin >> increase;
+                list[i].IncreaseRate(increase);
+                cout << "New Hourly Rate: " << list[i].GetHourlyRate() << list[i].GetHourlyRate() << endl;
+            }
+                 else if (response == 'N' || response == 'n')
+                 {
+                      cout << "No increase in pay for worker " << list[i].GetName() << endl;
+
+                 }
+
+            }
+
+        }
+
+    }//end main

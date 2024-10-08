@@ -94,4 +94,5 @@ bool CWorker::HasWorkNum(int workNum)
 void CWorker::IncreaseRate(double percentIncrease)
 {
     m_HourlyRate += m_HourlyRate * percentIncrease / 100;
+
 }
