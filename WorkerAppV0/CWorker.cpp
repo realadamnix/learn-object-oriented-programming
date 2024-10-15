@@ -10,6 +10,7 @@ CWorker::CWorker(void)
 }
 
 //fred      5023  //8787
+// This is a comment
 CWorker::CWorker(string name, int workNo)
 {
 	m_Name = name;
