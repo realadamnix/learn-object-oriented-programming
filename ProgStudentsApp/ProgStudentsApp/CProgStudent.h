@@ -19,15 +19,18 @@ public:
 	CProgStudent(string name, string kNumber);
 
 
-	//regular function prototypes
+	//regular function prototypes  
 	void SetMayExamMark(int mark);
-	void SetChristmasMark(int mark);
+	void SetChristmasMark(int mark); 
 	void SetProj1Mark(int mark);
 	void SetProj2Mark(int mark);
 	void SetLLAttendanceMark(int mark);
+
+	//getters 
 	string GetName(void);
 	void ShowDetails(void);
 	int GetTotalMark(void);
 	bool Knum();
+	bool GetKnum();
 };
 

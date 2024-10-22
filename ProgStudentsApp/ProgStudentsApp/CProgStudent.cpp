@@ -24,7 +24,7 @@ CProgStudent::CProgStudent(string name, string kNumber)
 
 //regular function definitions
 
-                                    //40
+                                   
 void CProgStudent::SetMayExamMark(int mark)
 {
     m_MayMark = mark;
@@ -81,7 +81,14 @@ int CProgStudent::GetTotalMark(void)
 }
 
 
-bool CProgStudent::Knum()
+bool CProgStudent::Knum(void)
+{
+    // TODO: Add your implementation code here.
+    return false;
+}
+
+
+bool CProgStudent::GetKnum(void)
 {
     // TODO: Add your implementation code here.
     return false;
