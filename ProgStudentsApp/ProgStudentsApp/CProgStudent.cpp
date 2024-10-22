@@ -81,15 +81,51 @@ int CProgStudent::GetTotalMark(void)
 }
 
 
-bool CProgStudent::Knum(void)
+
+string  CProgStudent::GetKnum(void)
 {
     // TODO: Add your implementation code here.
-    return false;
+    return m_KNum; 
 }
 
 
-bool CProgStudent::GetKnum(void)
+
+    int CProgStudent::GetProj2Mark(void)
 {
     // TODO: Add your implementation code here.
-    return false;
+    return 0;
 }
+
+
+int CProgStudent::GetProj1Mark(void)
+{
+    return m_ChristmasMark;
+}
+
+
+int CProgStudent::IsAFaill(void )
+{
+        // TODO: Add your implementation code here.
+        if (GetTotalMark() < 40)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+}
+
+    bool CProgStudent::HasKnum(string knumber)
+    {
+
+        if (m_KNum == knumber)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+

@@ -1,4 +1,3 @@
-#pragma once
 using namespace std;
 #include <iostream>
 #include <iomanip>
@@ -19,18 +18,22 @@ public:
 	CProgStudent(string name, string kNumber);
 
 
-	//regular function prototypes  
 	void SetMayExamMark(int mark);
-	void SetChristmasMark(int mark); 
+	void SetChristmasMark(int mark);
 	void SetProj1Mark(int mark);
 	void SetProj2Mark(int mark);
 	void SetLLAttendanceMark(int mark);
 
-	//getters 
 	string GetName(void);
 	void ShowDetails(void);
 	int GetTotalMark(void);
-	bool Knum();
-	bool GetKnum();
-};
 
+	string GetKnum(void);
+
+
+	int GetProj2Mark();
+
+	int GetProj1Mark();
+	int IsAFaill();
+	bool HasKnum(string Knumber);
+};
