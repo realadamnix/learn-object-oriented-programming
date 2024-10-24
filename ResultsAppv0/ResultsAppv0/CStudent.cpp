@@ -59,7 +59,16 @@ bool CStudent::HasName(string name)
 bool CStudent::IsAPass(void)
 {
 	
-	return false;
+	int total = m_Assessment + m_Exam;
+
+	if (total >= 15 && m_exam >= 15)
+	{
+
+		return true;
+	
+	}
+	else
+		return false;
 }
 
 
@@ -68,6 +77,5 @@ string CStudent::GetGrade(void)
 	return " ";
 
 }
-
 
 

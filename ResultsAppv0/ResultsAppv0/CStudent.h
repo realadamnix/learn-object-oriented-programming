@@ -25,5 +25,6 @@ public:
 	bool IsAPass(void);
 	string GetGrade(void);
 	
+	bool m_exam();
 };
 
