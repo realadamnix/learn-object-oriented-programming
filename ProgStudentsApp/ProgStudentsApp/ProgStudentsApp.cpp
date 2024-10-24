@@ -83,19 +83,17 @@ int main()
 
 	}
 
-	//Display the details of each student in the list
-	cout << "\n\n\n";
-	cout << "\t\tStudent Details\n";
-	for (int i = 0; i < 3; i++)
-	{
-		list[i].ShowDetails();
-	}
 
-	
+
+	// 
+
+
+
+
+
 
 
 }
-
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 

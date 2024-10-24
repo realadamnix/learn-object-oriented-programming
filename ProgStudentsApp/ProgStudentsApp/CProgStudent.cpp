@@ -89,14 +89,68 @@ string  CProgStudent::GetKnum(void)
 }
 
 
+<<<<<<< HEAD
+int CProgStudent::GetLLAtendenceMaek(void)
+=======
 
     int CProgStudent::GetProj2Mark(void)
+>>>>>>> 3aa741226c8f28063aa392ba6806bdd8db753023
 {
     // TODO: Add your implementation code here.
     return 0;
 }
 
 
+<<<<<<< HEAD
+int CProgStudent::GetProJ1mark(void)
+{
+    // TODO: Add your implementation code here.
+    return 0;
+}
+
+
+int CProgStudent::GetProJ2mark(void)
+{
+    // TODO: Add your implementation code here.
+    return 0;
+}
+
+
+int CProgStudent::GetMayMark(void)
+{
+    // TODO: Add your implementation code here.
+    return 0;
+}
+
+
+int CProgStudent::GetChristmasMark(void)
+{
+    // TODO: Add your implementation code here.
+    return 0;
+}
+
+
+
+bool CProgStudent::HasKnumber(void)
+{
+    // TODO: Add your implementation code here.
+    return false;
+}
+
+
+bool CProgStudent::IsAfail(void)
+{
+    // TODO: Add your implementation code here.
+    return false;
+}
+
+
+string CProgStudent::Getknumber(void)
+{
+    // TODO: Add your implementation code here.
+    return 0;
+}
+=======
 int CProgStudent::GetProj1Mark(void)
 {
     return m_ChristmasMark;
@@ -129,3 +183,4 @@ int CProgStudent::IsAFaill(void )
         }
     }
 
+>>>>>>> 3aa741226c8f28063aa392ba6806bdd8db753023

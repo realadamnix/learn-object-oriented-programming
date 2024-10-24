@@ -27,6 +27,22 @@ public:
 	string GetName(void);
 	void ShowDetails(void);
 	int GetTotalMark(void);
+<<<<<<< HEAD
+	bool Knum();
+
+	
+
+	int GetLLAtendenceMaek(void);
+	int GetProJ1mark(void);
+	int GetProJ2mark(void);
+	int GetMayMark(void);
+	int GetChristmasMark(void);
+	bool HasKnumber(void);
+	bool IsAfail(void);
+	string Getknumber(void);
+};
+=======
+>>>>>>> 3aa741226c8f28063aa392ba6806bdd8db753023
 
 	string GetKnum(void);
 
