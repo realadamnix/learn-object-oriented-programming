@@ -1,182 +1,182 @@
-// ProgStudentsApp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include "CProgStudent.h"
+
+#include <iostream>
+#include "CProgStudent.h"
+
+void DisplayMenu()
+{
+    cout << "Menu:\n";
+    cout << "1. Enter student details\n";
+    cout << "2. Enter marks for Christmas\n";
+    cout << "3. Enter marks for LL Attendance\n";
+    cout << "4. Enter marks for Proj1\n";
+    cout << "5. Enter marks for Proj2\n";
+    cout << "6. Enter marks for May Exam\n";
+    cout << "7. Display student details\n";
+    cout << "8. Display total marks for each student\n";
+    cout << "9. Check if a student has failed\n";
+    cout << "10. Display pass list of students\n";
+    cout << "11. Check subcomponent marks for a particular student\n";
+    cout << "0. Exit\n";
+    cout << "Enter your choice: ";
+}
 
 int main()
 {
-	CProgStudent list[3];
-	string name, kNumber;
-	int mark;
+    CProgStudent list[3];
+    string name, kNumber;
+    int mark;
+    int choice;
 
-	//Get names and work-numbers from the user
-	//Then instantiate an object and insert in the list
-	for (int i = 0; i < 3; i++)
-	{
-		cout << "Enter a student name and K-number : ";
-		cin >> name >> kNumber;
-		CProgStudent student(name, kNumber);
-		list[i] = student;
-	}
+    do
+    {
+        DisplayMenu();
+        cin >> choice;
 
-	//Display the details of each student in the list
-	cout << "\n\n\n";
-	cout << "\t\tStudent Details\n";
-	for (int i = 0; i < 3; i++)
-	{
-		list[i].ShowDetails();
-	}
+        switch (choice)
+        {
+            case 1:
+                for (int i = 0; i < 3; i++)
+                {
+                    cout << "Enter a student name and K-number : ";
+                    cin >> name >> kNumber;
+                    CProgStudent student(name, kNumber);
+                    list[i] = student;
+                }
+                break;
 
+            case 2:
+                cout << "Enter marks for Christmas\n";
+                for (int i = 0; i < 3; i++)
+                {
+                    cout << "Enter mark for " << list[i].GetName() << " : ";
+                    cin >> mark;
+                    list[i].SetChristmasMark(mark);
+                }
+                break;
 
-	//allocate marks for Xmas
-	cout << "Enter marks for Christmas\n";
-	for (int i = 0; i < 3; i++)
-	{
-		cout << "Enter mark for "
-			<< list[i].GetName() << " : ";
-		cin >> mark;
-		list[i].SetChristmasMark(mark);
+            case 3:
+                cout << "Enter marks for LL Attendance\n";
+                for (int i = 0; i < 3; i++)
+                {
+                    cout << "Enter mark for " << list[i].GetName() << " : ";
+                    cin >> mark;
+                    list[i].SetLLAttendanceMark(mark);
+                }
+                break;
 
-	}
+            case 4:
+                cout << "Enter marks for Proj1\n";
+                for (int i = 0; i < 3; i++)
+                {
+                    cout << "Enter mark for " << list[i].GetName() << " : ";
+                    cin >> mark;
+                    list[i].SetProj1Mark(mark);
+                }
+                break;
 
+            case 5:
+                cout << "Enter marks for Proj2\n";
+                for (int i = 0; i < 3; i++)
+                {
+                    cout << "Enter mark for " << list[i].GetName() << " : ";
+                    cin >> mark;
+                    list[i].SetProj2Mark(mark);
+                }
+                break;
 
-	//allocate marks for LL Attendance
-	cout << "Enter marks for LL Attendance\n";
-	for (int i = 0; i < 3; i++)
-	{
-		cout << "Enter mark for "
-			<< list[i].GetName() << " : ";
-		cin >> mark;
-		list[i].SetLLAttendanceMark(mark);
+            case 6:
+                cout << "Enter marks for May Exam\n";
+                for (int i = 0; i < 3; i++)
+                {
+                    cout << "Enter mark for " << list[i].GetName() << " : ";
+                    cin >> mark;
+                    list[i].SetMayExamMark(mark);
+                }
+                break;
 
-	}
+            case 7:
+                cout << "\n\n\n";
+                cout << "\t\tStudent Details\n";
+                for (int i = 0; i < 3; i++)
+                {
+                    list[i].ShowDetails();
+                }
+                break;
 
-	//allocate marks for Proj1 Attendance
-	cout << "Enter marks for Proj1\n";
-	for (int i = 0; i < 3; i++)
-	{
-		cout << "Enter mark for "
-			<< list[i].GetName() << " : ";
-		cin >> mark;
-		list[i].SetProj1Mark(mark);
+            case 8:
+                cout << "Student Totals\n";
+                for (int i = 0; i < 3; i++)
+                {
+                    cout << list[i].GetName() << " : " << list[i].GetTotalMark() << endl;
+                }
+                break;
 
-	}
+            case 9:
+                cout << "\n\n\n";
+                cout << "Check to see whether a particular student has failed\n";
+                cout << "Enter a student name: ";
+                cin >> name;
 
-	//allocate marks for Proj2 Attendance
-	cout << "Enter marks for Proj2\n";
-	for (int i = 0; i < 3; i++)
-	{
-		cout << "Enter mark for "
-			<< list[i].GetName() << " : ";
-		cin >> mark;
-		list[i].SetProj2Mark(mark);
+                for (int i = 0; i < 3; i++)
+                {
+                    if (list[i].HasName(name))
+                    {
+                        if (list[i].IsAFail())
+                        {
+                            cout << "Student " << list[i].GetName() << " has failed: Total Mark is : " << list[i].GetTotalMark() << endl;
+                        }
+                    }
+                }
+                break;
 
-	}
+            case 10:
+                cout << "\n\n\n";
+                cout << "Pass List of students is as follows:\n ";
+                cout << "Student Name\t\t" << "Student Knumber\t\t" << "Pass Mark" << endl;
 
-	//allocate marks for May Exam
-	cout << "Enter marks for May Exam\n";
-	for (int i = 0; i < 3; i++)
-	{
-		cout << "Enter mark for "
-			<< list[i].GetName() << " : ";
-		cin >> mark;
-		list[i].SetMayExamMark(mark);
+                for (int i = 0; i < 3; i++)
+                {
+                    if (!list[i].IsAFail())
+                    {
+                        cout << list[i].GetName() << "\t\t\t" << list[i].GetKNumber() << "\t\t\t" << list[i].GetTotalMark() << endl;
+                    }
+                }
+                break;
 
-	}
+            case 11:
+                cout << "\n\n\n";
+                cout << "Check subcomponent marks for a particular student\n";
+                cout << "Enter a student name: ";
+                cin >> name;
 
-	//re-display the objects to screen
-	//Display the details of each student in the list
-	cout << "\n\n\n";
-	cout << "\t\tStudent Details\n";
-	for (int i = 0; i < 3; i++)
-	{
-		list[i].ShowDetails();
-	}
+                for (int i = 0; i < 3; i++)
+                {
+                    if (list[i].HasName(name))
+                    {
+                        cout << "Student Name: " << list[i].GetName() << endl;
+                        cout << "Transcript marks are as follows: " << endl;
+                        cout << "Christmas mark: " << list[i].GetChristmasMark() << endl;
+                        cout << "LL Attendance mark: " << list[i].GetLLAttendanceMark() << endl;
+                        cout << "Proj1 mark: " << list[i].GetProj1Mark() << endl;
+                        cout << "Proj2 mark: " << list[i].GetProj2Mark() << endl;
+                        cout << "May mark: " << list[i].GetMayMark() << endl;
+                    }
+                }
+                break;
 
-	//display the total mark for each student
-	cout << "Student Totals\n";
-	for (int i = 0; i < 3; i++)
-	{
-		cout << list[i].GetName() << " : "
-			<< list[i].GetTotalMark() << endl;
+            case 0:
+                cout << "Exiting...\n";
+                break;
 
-	}
+            default:
+                cout << "Invalid choice. Please try again.\n";
+                break;
+        }
 
-	//part a) - class creation part 3
-	cout << "\n\n\n";
-	cout << "Check to see whether a particular student has failed\n";
-	cout << "Enter a student name: ";
-	cin >> name;
+        cout << endl;
 
-	for (int i = 0; i < 3; i++)
-	{
-		if (list[i].HasName(name)) //found the object
-		{
-			//check has that student failed - yes/no?
-			if (list[i].IsAFail() == true)
-				cout << "Student " << list[i].GetName()
-				<< " has failed: "
-				<< "Total Mark is : "
-				<< list[i].GetTotalMark() << endl;
+    } while (choice != 0);
 
-		}
-	}
-
-	//part b) - class creation part 3
-	//Output the pass list of students
-	cout << "\n\n\n";
-	cout << "Pass List of students is as follows:\n ";
-	cout << "Student Name\t\t" << "Student Knumber\t\t" << "Pass Mark" << endl;
-
-	for (int i = 0; i < 3; i++)
-	{
-		if (list[i].IsAFail() == false)
-			//student has passed
-			cout << list[i].GetName()
-			<< "\t\t\t" << list[i].GetKNumber()
-			<< "\t\t\t" << list[i].GetTotalMark()
-			<< endl;
-	}
-
-	//part c) - class creation part 3
-	//Check subcomponent marks for a particular student
-	cout << "\n\n\n";
-	cout << "Check subcomponent marks for a particular student\n";
-	cout << "Enter a student name: ";
-	cin >> name;
-
-	for (int i = 0; i < 3; i++)
-	{
-		if (list[i].HasName(name) == true)
-		{//output subcomponent marks
-			cout << "Student Name: "
-				<< list[i].GetName() << endl;
-			cout << "Transcript marks are as follows: " << endl;
-			cout << "Christmas mark: "
-				<< list[i].GetChristmasMark() << endl;
-			cout << "LL Attendance mark: "
-				<< list[i].GetLLAttendanceMark() << endl;
-			cout << "Proj1 mark: "
-				<< list[i].GetProj1Mark() << endl;
-			cout << "Proj2 mark: "
-				<< list[i].GetProj2Mark() << endl;
-			cout << "May mark: "
-				<< list[i].GetMayMark() << endl;
-
-
-		}
-
-	}
-
-}//end main
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    return 0;
+}

@@ -128,3 +128,4 @@ int CProgStudent::GetMayMark(void)
 {
     return m_MayMark;
 }
+
