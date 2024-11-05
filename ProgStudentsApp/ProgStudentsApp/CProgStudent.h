@@ -1,7 +1,8 @@
+#pragma once
 using namespace std;
-#include <iostream>
 #include <iomanip>
 #include <string>
+#include <iostream>
 class CProgStudent
 {
 private:
@@ -12,44 +13,28 @@ private:
 	int m_Proj1Mark;
 	int m_Proj2Mark;
 	int m_MayMark;
+
 public:
-	//constructor function prototypes
-	CProgStudent(void);
+	//constructor functions
+	CProgStudent(void);//standard constructor function
 	CProgStudent(string name, string kNumber);
 
-
+	//regular functions
 	void SetMayExamMark(int mark);
 	void SetChristmasMark(int mark);
 	void SetProj1Mark(int mark);
 	void SetProj2Mark(int mark);
 	void SetLLAttendanceMark(int mark);
-
 	string GetName(void);
 	void ShowDetails(void);
 	int GetTotalMark(void);
-<<<<<<< HEAD
-	bool Knum();
-
-	
-
-	int GetLLAtendenceMaek(void);
-	int GetProJ1mark(void);
-	int GetProJ2mark(void);
-	int GetMayMark(void);
+	bool IsAFail(void);
+	bool HasName(string searchName);
+	string GetKNumber(void);
 	int GetChristmasMark(void);
-	bool HasKnumber(void);
-	bool IsAfail(void);
-	string Getknumber(void);
+	int GetLLAttendanceMark(void);
+	int GetProj1Mark(void);
+	int GetProj2Mark(void);
+	int GetMayMark(void);
 };
-=======
->>>>>>> 3aa741226c8f28063aa392ba6806bdd8db753023
 
-	string GetKnum(void);
-
-
-	int GetProj2Mark();
-
-	int GetProj1Mark();
-	int IsAFaill();
-	bool HasKnum(string Knumber);
-};
