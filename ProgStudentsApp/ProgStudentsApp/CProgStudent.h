@@ -36,5 +36,7 @@ public:
 	int GetProj1Mark(void);
 	int GetProj2Mark(void);
 	int GetMayMark(void);
+	double bestStudent();
+	double BestStudentGrade();
 };
 

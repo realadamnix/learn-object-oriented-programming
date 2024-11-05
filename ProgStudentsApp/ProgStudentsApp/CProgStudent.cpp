@@ -129,3 +129,11 @@ int CProgStudent::GetMayMark(void)
     return m_MayMark;
 }
 
+
+
+
+double CProgStudent::BestStudentGrade()
+{
+    // TODO: Add your implementation code here.
+    return 0.0;
+}
